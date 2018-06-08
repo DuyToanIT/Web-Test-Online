@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Thi Trắc Ngiệm</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <!-- Fontastic Custom icon font-->
+    <link rel="stylesheet" href="css/fontastic.css">
+    <!-- Google fonts - Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <!-- jQuery Circle-->
+    <link rel="stylesheet" href="css/grasp_mobile_progress_circle-1.0.0.min.css">
+    <!-- Custom Scrollbar-->
+    <link rel="stylesheet" href="vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+    <!-- Icheck -->
+    <link rel="stylesheet" href="vendor/icheck/skins/all.css">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="vendor/DataTables/datatables.min.css">
+    <link rel="stylesheet" href="vendor/confirm/css/jquery-confirm.min.css">
+    
+  </head>
+  <body>
+    <!-- Side Navbar -->
+    <nav class="side-navbar">
+      <div class="side-navbar-wrapper">
+        <!-- Sidebar Header    -->
+        <div class="sidenav-header d-flex align-items-center justify-content-center">
+          <!-- User Info-->
+          <div class="sidenav-header-inner text-center"><img src="img/logo.png" alt="person" class="img-fluid rounded-circle">
+            <h2 class="h5">Hệ thống thi</h2><span>Trắc nghiệm toán</span>
+          </div>
+        </div>
+        <!-- Sidebar Navigation Menus-->
+        <div class="main-menu">
+          <h5 class="sidenav-heading">Quản lý</h5>
+          <ul id="side-main-menu" class="side-menu list-unstyled">                  
+            <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Ngân hàng câu hỏi </a>
+              <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                <li><a href="tablequestions.html">Danh sách câu hỏi</a></li>
+                <li><a href="#"data-toggle="modal" data-target="#question">Thêm câu hỏi</a></li>
+              </ul>
+            </li>
+            <li><a href="#exampledropdownDropdown1" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Ngân hàng đề thi</a>
+              <ul id="exampledropdownDropdown1" class="collapse list-unstyled ">
+                <li><a href="tableSubjects.html">Danh sách đề thi</a></li>
+                <!-- <li><a href="#">Tạo đề thi</a></li> -->
+              </ul>
+            </li>
+            <li><a href="#">Danh sách nhóm</a></li>
+            <li><a href="exam.html">Trang thi</a></li>
+          </ul>
+        </div>
+        <div class="admin-menu" id="menuListUsers">
+          <h5 class="sidenav-heading">Người dùng</h5>
+          <ul id="side-admin-menu" class="side-menu list-unstyled"> 
+            <li> <a href="tableusers.html"> <i class="icon-screen"> </i>Danh sách người dùng</a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="page">
+      <!-- navbar-->
+      <header class="header">
+        <nav class="navbar">
+          <div class="container-fluid">
+            <div class="navbar-holder d-flex align-items-center justify-content-between">
+              <div class="navbar-header"><a id="toggle-btn" href="#" class="menu-btn"><i class="icon-bars"> </i></a><a href="index.html" class="navbar-brand">
+                  <div class="brand-text d-none d-md-inline-block"><span>Trắc Nghiệm </span><strong class="text-primary">Toán</strong></div></a></div>
+              <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+                
+                
+                <!-- Log out-->
+                <li class="nav-item dropdown"><a id="account" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link account dropdown-toggle"><img src="img/avata.png"></a>
+                  <ul aria-labelledby="account" class="dropdown-menu">
+                    <li><a id="acc" rel="nofollow" href="#" class="dropdown-item" > <img src="img/avata.png" class="mr-2"><span>Tài khoản</span></a></li>
+                    <li><a id="logout" rel="nofollow" href="#" class="dropdown-item"> <img src="img/logout.png" class="mr-2"><span>Đăng xuất</span></a></li>
+                  </ul>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- Breadcrumb-->
+      <div class="breadcrumb-holder">
+        <div class="container-fluid">
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+            <li class="breadcrumb-item active">Danh sách nhóm</li>
+          </ul>
+        </div>
+      </div>
+      <section class="charts">
+        <div class="container-fluid">
+          <!-- Page Header-->
+          <header> 
+            <h1 class="h3 display">Nhóm: </h1>
+          </header>
+            <div class="row">
+              <div class="col-lg-12">
+                <!--Modal Sua group cau hoi-->
+                <div class="modal fade" id="modalAddGroup" tabindex="-1" role="dialog" aria-labelledby="groupAddTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="groupAddTitle">Nhóm: </h5>                              
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                          <form>
+                            <div class="form-group row">
+                              <label class="col-md-2 col-sm-12">Nội dung:</label>
+                              <div class="col-md-10 col-sm-12">
+                                <input id="txtContentGroup" type="text">                                          
+                              </div>                                   
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" id="btnAddGroup" class="btn btn-primary">Save</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--End Modal them group-->
+                <!--Modal TT Tai khoan-->
+                <div class="modal fade" id="infoAcc" tabindex="-1" role="dialog" aria-labelledby="accTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-md" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="accTitle">Thông tin tài khoản</h5>                              
+                        </div>
+                        <form>
+                        <div class="modal-body">
+                          <div class="container-fluid">
+                            
+                              <div class="form-group row ml-1">
+                                <div class="col-md-2 col-sm-12">
+                                    <img src="img/avatar.png" width="100px" height="100px" class="ml-1">
+                                </div>                                
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-md-4 col-sm-12 text-right">Tài khoản:</label>
+                                <div class="col-md-8 col-sm-12">
+                                  <input id="txtUseName" rows="5" style="resize: none; width: 100%" disabled>                                          
+                                </div>                                   
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-md-4 col-sm-12 text-right">Tên :</label>
+                                <div class="col-md-8 col-sm-12">
+                                  <input id="txtFirstName" rows="5" style="resize: none; width: 100%" required>                                          
+                                </div>                                   
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-md-4 col-sm-12 text-right">Họ :</label>
+                                <div class="col-md-8 col-sm-12">
+                                  <input id="txtLastName" rows="5" style="resize: none; width: 100%" required>                                          
+                                </div>                                   
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-md-4 col-sm-12 text-right">Email :</label>
+                                <div class="col-md-8 col-sm-12">
+                                  <input id="txtEmail" type="email" required>                                          
+                                </div>                                   
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-md-4 col-sm-12 text-right">Ngày sinh :</label>
+                                <div class="col-md-8 col-sm-12">
+                                  <input id="txtBirthday" type="date">                                          
+                                </div>                                   
+                              </div>
+                              
+                            
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button id="btnUpdateAcc" type="submit" class="btn btn-primary">Cập nhật</button>
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                        </div>
+                      </form>
+                      </div>
+                    </div>
+                  </div>
+                <!--End modal tt tai khoan-->
+                <!--Modal chi tiet group-->
+                <div class="modal fade" id="modalInfoGroup" tabindex="-1" role="dialog" aria-labelledby="groupTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="groupTitle">Danh sách chủ đề: </h5>                              
+                      </div>
+                      <div class="modal-body">
+                        <div class="table-responsive">
+                          <table id="tbSubject" class="table display table-responsive" style="width: 100% !important;">
+                            <thead>
+                             
+                            </thead>
+                            <tbody>
+                                
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--End Modal chi tiet group-->
+                <button style="float:right" class="btn btn-dark" data-toggle="modal" data-target="#modalAddGroup">Thêm</button> 
+                <div class="card">
+                  <div class="card-header">
+                    <h4>Danh sách nhóm</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table id="groupstb" class="display table table-bordered table-hover table-striped" style="width:100%" >
+                        <thead>
+                          <tr>
+                            <th>STT</th>                     
+                            <th>Tên nhóm</th>
+                            <th>Thao tác</th>                
+                          </tr>
+                        </thead>
+                        <tbody>
+                          
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>  
+          </div>
+        </div>        
+      </section>
+      <footer class="main-footer">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-6">
+              <p>Hệ thống thi &copy; 2017-2019</p>
+            </div>
+            <div class="col-sm-6 text-right">
+              <p>Design by <a href="#" class="external">51403390-51403358-51403344</a></p>
+              <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions and it helps me to run Bootstrapious. Thank you for understanding :)-->
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- JavaScript files-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper.js/umd/popper.min.js"> </script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/grasp_mobile_progress_circle-1.0.0.min.js"></script>
+    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
+    <script src="vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="vendor/DataTables/datatables.min.js"></script>
+    <script src="vendor/icheck/icheck.js"></script>
+    <script src="vendor/ckeditor/ckeditor.js"></script>
+    <!-- Main File-->
+    <script src="js/custom.js"></script>
+    <script src="js/groups.js"></script>
+    <script src="js/front.js"></script>
+    <!-- <script src="js/Plugin.js"></script> -->
+    <script src="js/js-cookie.js"></script>
+    <script src="vendor/confirm/js/jquery-confirm.min.js"></script>
+    
+    </body>
+</html>

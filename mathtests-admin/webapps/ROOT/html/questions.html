@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <!-- Fontastic Custom icon font-->
+    <link rel="stylesheet" href="css/fontastic.css">
+    <!-- Google fonts - Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <!-- jQuery Circle-->
+    <link rel="stylesheet" href="css/grasp_mobile_progress_circle-1.0.0.min.css">
+    <!-- Custom Scrollbar-->
+    <link rel="stylesheet" href="vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+    <!-- Icheck -->
+    <link rel="stylesheet" href="vendor/icheck/skins/all.css">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="vendor/DataTables/datatables.min.css">
+    <link rel="stylesheet" href="vendor/DataTables/datatables.min.css">
+  </head>
+  <body>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+      <div class="breadcrumb-holder">
+        <div class="container-fluid">
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+            <li class="breadcrumb-item active">Danh sách câu hỏi</li>
+          </ul>
+        </div>
+      </div>
+      <section class="charts">
+        <div class="container-fluid">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="modal fade" id="question" tabindex="-1" role="dialog" aria-labelledby="questionTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="questionTitle">Câu hỏi</h5>                              
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                          <form>
+                            <div class="form-group row">
+                              <label class="col-md-2 col-sm-12">Loại câu  hỏi:</label>
+                              <div class="col-md-10 col-sm-12">    
+                                <select class="form-control">
+                                    <option>Một đáp án</option>
+                                    <option>Nhiều đáp án</option>
+                                </select>                                        
+                              </div>                                        
+                            </div>
+                            <div class="form-group row">
+                              <label class="col-md-2 col-sm-12">Nội dung:</label>
+                              <div class="col-md-10 col-sm-12">
+                                <textarea id="contentsQuestion" rows="5" style="resize: none; width: 100%"></textarea>                                          
+                              </div>                                   
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-2 col-sm-12">Đáp án:</label>
+                                <div class="col-md-10 col-sm-12">
+                                    <div id="DapAn1" class="DapAn">
+                                        <input type="checkbox" id="ckDapAn1" name="icheckDapAn">
+                                        <input type="text" id="txtDapAn1" class="col-md-11 col-sm-11">
+                                    </div>
+                                    <div id="DapAn2" class="DapAn">
+                                        <input type="checkbox" id="ckDapAn2" name="icheckDapAn">
+                                        <input type="text" id="txtDapAn2" class="col-md-11 col-sm-11">
+                                    </div>
+                                    <div id="DapAn3" class="DapAn">
+                                        <input type="checkbox" id="ckDapAn3" name="icheckDapAn">
+                                        <input type="text" id="txtDapAn3" class="col-md-11 col-sm-11">
+                                    </div>
+                                    <div id="DapAn4" class="DapAn">
+                                        <input type="checkbox" id="ckDapAn4" name="icheckDapAn">
+                                        <input type="text" id="txtDapAn4" class="col-md-11 col-sm-11">
+                                    </div>
+                                </div>                                        
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Save</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button style="float:right" class="btn btn-dark" data-toggle="modal" data-target="#question">Thêm</button> 
+                <div class="card">
+                  <div class="card-header">
+                    <h4>Câu hỏi</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <div class="questions" id="ques1" style="display: block;">
+			<div id="questions">
+				<div class="questionnumber"> 
+					Cho hình lập phương\(ABCD{{A}^{'}}{{B}^{'}}{{C}^{'}}{{D}^{'}}\) cạnh \(a\). Tính diện tích xung quanh\({{S}_{xq}}\)của khối nón có đỉnh là tâm hình vuông\({{A}^{'}}{{B}^{'}}{{C}^{'}}{{D}^{'}}\)và có đường tròn đáy ngoại tiếp hình vuông\(ABCD\).
+				</div>
+			</div>
+			<div class="answer">
+				<div class="a_ans">
+					<input name="ans[240]" id="ans11" value="1" type="radio">
+					\({{S}_{xq}}=\frac{\pi {{a}^{2}}\sqrt{3}}{3}\).
+				</div>
+				<div class="a_ans">
+					<input id="ans21" name="ans[240]" value="2" type="radio">
+					B. File
+				</div>
+				<div class="a_ans">
+					<input id="ans31" name="ans[240]" value="3" type="radio">
+					C. FileUpload
+				</div>
+				<div class="a_ans">
+					<input id="ans31" name="ans[240]" value="4" type="radio">
+					D. Date
+				</div>
+			</div>
+
+			<div style="clear:both;"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>  
+          </div>
+        </div>        
+      </section>
+    <!-- JavaScript files-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper.js/umd/popper.min.js"> </script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/grasp_mobile_progress_circle-1.0.0.min.js"></script>
+    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
+    <script src="vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="vendor/DataTables/datatables.min.js"></script>
+    <script src="vendor/icheck/icheck.js"></script>
+    <script src="vendor/ckeditor/ckeditor.js"></script>
+    <!-- Main File-->
+    <script src="js/front.js"></script>
+    <script src="js/Plugin.js"></script>
+    <script src="js/js-cookie.js"></script>
+    <script src="js/custom.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        var tb1, infoData;
+        var user = Cookies.getJSON('user');
+        tb1 = $('#questiontb').DataTable({
+          columnDefs:[
+            {
+              orderable: false,
+              targets:[0,5]
+           }
+          ],
+          aLengthMenu:[
+            [10,25,50,100,-1],
+            [10,25,50,100,"All"]
+          ],
+          iDisplayLength:50,
+          order: [[1,"asc"]],
+          aaData: null,
+          rowId: "id",
+          columns:[
+            {data: null, className: "text-center"},
+            {data: "name"},
+            {data: "email"},
+            {data: "gender"},
+            {data: "phone", className: "text-center"},
+            {data: null, render: function (data, type, row) {
+              return '<i data-group="grpEdit" class = "fa fa-edit text-success pointer"></i> ' +
+              '<i data-group="grpDelete" class = "fa fa-remove text-danger pointer"></i> ';
+            }}
+          ],
+          initComplete:function(settings, json){
+           // loadTable();
+           // $("select[name=exampletb_length]").select2({width:'80px', minimumResultsForSearch:-1});
+          },
+          drawCallback:function(settings){
+            // bindTableEvents()
+          }
+        });
+        
+        tb1.on('order.dt search.dt', function(){
+          tb1.column(0, {search: 'applied', order: 'applied'}).nodes().each(function(cell, i){
+            cell.innerHTML = i + 1; 
+          })
+        }).draw();
+      
+        function loadTable(){
+          var url = "http://www.saigontech.edu.vn/restful-api/librarians.php?token=" + user.accessToken ;
+         // alert(user.accessToken);
+          $.get(url, function(res){
+            if(res.errorCode == 0)
+            {
+              tb1.clear().draw();
+              tb1.rows.add(res.readers);// Add new data
+              tb1.columns.adjust().draw(); // Redraw the DataTable
+            }
+            else
+            {
+              alert("false");
+            }
+          },'json');
+        }
+      });
+    </script>
+    </body>
+</html>

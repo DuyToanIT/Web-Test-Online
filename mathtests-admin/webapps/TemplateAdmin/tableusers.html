@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Thi Trắc Ngiệm</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <!-- Fontastic Custom icon font-->
+    <link rel="stylesheet" href="css/fontastic.css">
+    <!-- Google fonts - Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <!-- jQuery Circle-->
+    <link rel="stylesheet" href="css/grasp_mobile_progress_circle-1.0.0.min.css">
+    <!-- Custom Scrollbar-->
+    <link rel="stylesheet" href="vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="vendor/DataTables/datatables.min.css">
+    <link rel="stylesheet" href="vendor/DataTables/datatables.min.css">
+  </head>
+  <body>
+    <!-- Side Navbar -->
+    <nav class="side-navbar">
+      <div class="side-navbar-wrapper">
+        <!-- Sidebar Header    -->
+        <div class="sidenav-header d-flex align-items-center justify-content-center">
+          <!-- User Info-->
+          <div class="sidenav-header-inner text-center"><img src="img/logo.png" alt="person" class="img-fluid rounded-circle">
+            <h2 class="h5">Hệ thống thi</h2><span>Trắc nghiệm toán</span>
+          </div>
+        </div>
+        <!-- Sidebar Navigation Menus-->
+        <div class="main-menu">
+            <h5 class="sidenav-heading">Quản lý</h5>
+            <ul id="side-main-menu" class="side-menu list-unstyled">                  
+              <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Ngân hàng câu hỏi </a>
+                <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                  <li><a href="tablequestions.html">Danh sách câu hỏi</a></li>
+                  <li><a href="#"data-toggle="modal" data-target="#question">Thêm câu hỏi</a></li>
+                </ul>
+              </li>
+              <li><a href="#exampledropdownDropdown1" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Ngân hàng đề thi</a>
+                <ul id="exampledropdownDropdown1" class="collapse list-unstyled ">
+                  <li><a href="tableSubjects.html">Danh sách đề thi</a></li>
+                  <!-- <li><a href="#">Tạo đề thi</a></li> -->
+                </ul>
+              </li>
+              <li><a href="groups.html">Danh sách nhóm</a></li>
+              <li><a href="exam.html">Trang thi</a></li>
+            </ul>
+          </div>
+          <div class="admin-menu" id="menuListUsers">
+            <h5 class="sidenav-heading">Người dùng</h5>
+            <ul id="side-admin-menu" class="side-menu list-unstyled"> 
+              <li> <a href="tableusers.html"> <i class="icon-screen"> </i>Danh sách người dùng</a></li>
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="page">
+      <!-- navbar-->
+      <header class="header">
+          <nav class="navbar">
+            <div class="container-fluid">
+              <div class="navbar-holder d-flex align-items-center justify-content-between">
+                <div class="navbar-header"><a id="toggle-btn" href="#" class="menu-btn"><i class="icon-bars"> </i></a><a href="index.html" class="navbar-brand">
+                    <div class="brand-text d-none d-md-inline-block"><span>Trắc Nghiệm </span><strong class="text-primary">Toán</strong></div></a></div>
+                <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+                  
+                  
+                  <!-- Log out-->
+                  <li class="nav-item dropdown"><a id="account" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link account dropdown-toggle"><img src="img/avata.png"></a>
+                    <ul aria-labelledby="account" class="dropdown-menu">
+                      <li><a id="acc" rel="nofollow" href="#" class="dropdown-item" > <img src="img/avata.png" class="mr-2"><span>Tài khoản</span></a></li>
+                      <li><a id="logout" rel="nofollow" href="#" class="dropdown-item"> <img src="img/logout.png" class="mr-2"><span>Đăng xuất</span></a></li>
+                    </ul>
+                  </li>
+                  
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </header>
+      <!-- Breadcrumb-->
+      <div class="breadcrumb-holder">
+        <div class="container-fluid">
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+            <li class="breadcrumb-item active">Danh sách người dùng</li>
+          </ul>
+        </div>
+      </div>
+      <section class="charts">
+        <div class="container-fluid">
+          <!-- Page Header-->
+          <header> 
+            <h1 class="h3 display">Table</h1>
+          </header>
+            <div class="row">
+              <div class="col-lg-12">
+                <!--Modal them cau hoi-->
+                <div class="modal fade" id="question" tabindex="-1" role="dialog" aria-labelledby="questionTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="questionTitle">Câu hỏi</h5>                              
+                        </div>
+                        <form method="POST">
+                        <div class="modal-body">
+                          <div class="container-fluid">
+                              <input type="hidden" id="hidId" value="-1">
+                              <div class="form-group row">
+                                <label class="col-md-2 col-sm-12">Nội dung:</label>
+                                <div class="col-md-10 col-sm-12">
+                                  <textarea id="contentsQuestion" name="contentMath" rows="5" style="resize: none; width: 100%" required></textarea>                                          
+                                </div>                                   
+                              </div>
+                              <div class="form-group row">
+                                  <label class="col-md-2 col-sm-12">Đáp án:</label>
+                                  <div class="col-md-10 col-sm-12">
+                                      <div id="DapAn1" class="DapAn">
+                                          <input type="text" id="txtDapAn1" class="col-md-11 col-sm-11" required>
+                                      </div>
+                                      <div id="DapAn2" class="DapAn">
+                                          <input type="text" id="txtDapAn2" class="col-md-11 col-sm-11" required>
+                                      </div>
+                                      <div id="DapAn3" class="DapAn">
+                                          <input type="text" id="txtDapAn3" class="col-md-11 col-sm-11" required>
+                                      </div>
+                                      <div id="DapAn4" class="DapAn">
+                                          <input type="text" id="txtDapAn4" class="col-md-11 col-sm-11" required>
+                                      </div>
+                                  </div>                                        
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-md-2 col-sm-12">Câu đúng :</label>
+                                <div class="col-md-10 col-sm-12">
+                                  <select id="answerCorrect">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                  </select>
+                                </div>                                   
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-md-2 col-sm-12">Mô tả :</label>
+                                <div class="col-md-10 col-sm-12">
+                                  <textarea id="answerCorrectContents" name="contentMath" rows="5" style="resize: none; width: 100%"></textarea>                                          
+                                </div>                                   
+                              </div>
+                              <div class="row">
+                                <label class="col-md-2 col-sm-12">Công bố :</label>
+                                <input type="checkbox" id="checkPubliced">
+                              </div>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="btnAddQuestion" type="submit" class="btn btn-primary">Thêm</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                        </div>
+                      </form>
+                      </div>
+                    </div>
+                  </div>
+                <!--End Modal them cau hoi-->
+                <!--Modal dang ky tai khoan-->
+                <div class="modal fade" id="modalRegister" tabindex="-1" role="dialog" aria-labelledby="registerTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-md" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="registerTitle">Thông tin tài khoản</h5>                              
+                        </div>
+                        <form action="">
+                        <div class="modal-body">
+                          <div class="container-fluid">  
+                              <div class="form-group row ml-1">
+                                <div class="col-md-2 col-sm-12">
+                                    <img src="img/avatar.png" width="100px" height="100px" class="ml-1">
+                                </div>                                
+                              </div>
+                              <div class="form-group row mt-0">
+                                <label class="col-md-4 col-sm-12 text-right">Tài khoản:</label>
+                                <div class="col-md-8 col-sm-12">
+                                  <input id="txtUserNameR" type="text" required>                                          
+                                </div>                                   
+                              </div>
+                              <div class="form-group row mt-0">
+                                <label class="col-md-4 col-sm-12 text-right">Mật khẩu:</label>
+                                <div class="col-md-8 col-sm-12">
+                                  <input id="txtPasswordR" type="password" required>                                          
+                                </div>                                   
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-md-4 col-sm-12 text-right">Tên :</label>
+                                <div class="col-md-8 col-sm-12">
+                                  <input id="txtFirstNameR" type="text" required>                                          
+                                </div>                                   
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-md-4 col-sm-12 text-right">Họ :</label>
+                                <div class="col-md-8 col-sm-12">
+                                  <input id="txtLastNameR" type="text" required>                                          
+                                </div>                                   
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-md-4 col-sm-12 text-right">Email :</label>
+                                <div class="col-md-8 col-sm-12">
+                                  <input id="txtEmailR" type="email" required>                                          
+                                </div>                                   
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-md-4 col-sm-12 text-right">Ngày sinh :</label>
+                                <div class="col-md-8 col-sm-12">
+                                  <input id="txtBirthdayR" type="date" required>                                          
+                                </div>                                   
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-md-4 col-sm-12 text-right">Loại :</label>
+                                <div class="col-md-8 col-sm-12">
+                                  <select id="authoritiesR">
+                                    <option value="ROLE_SUPERVISOR">Giáo viên</option>
+                                    <option value="ROLE_USER">Sinh viên</option>
+                                  </select>                                       
+                                </div>                                   
+                              </div>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button id="btnCreateAcc" type="submit" class="btn btn-primary">Tạo</button>
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                        </div>
+                      </form>
+                      </div>
+                    </div>
+                  </div>
+                <!--End Modal dang ky-->
+                
+                <button style="float:right" class="btn btn-dark" data-toggle="modal" data-target="#modalRegister">Add</button> 
+                <div class="card">
+                  <div class="card-header">
+                    <h4>Table</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table id="userstb" class="display table table-bordered table-hover table-striped" style="width:100%" >
+                        <thead>
+                          <tr>
+                            <th>STT</th>
+                            <th>UserName</th>
+                            <th>Firssst Name</th>
+                            <th>Last Name</th>                          
+                            <th>Birthdate</th>
+                            <th>Email</th> 
+                            <th>Role</th>
+                                          
+                          </tr>
+                        </thead>
+                        <tbody>
+                          
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>  
+          </div>
+        </div>        
+      </section>
+      <footer class="main-footer">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-6">
+              <p>Hệ thống thi &copy; 2017-2019</p>
+            </div>
+            <div class="col-sm-6 text-right">
+              <p>Design by <a href="#" class="external">51403390-51403358-51403344</a></p>
+              <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions and it helps me to run Bootstrapious. Thank you for understanding :)-->
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- JavaScript files-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper.js/umd/popper.min.js"> </script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/grasp_mobile_progress_circle-1.0.0.min.js"></script>
+    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
+    <script src="vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="vendor/DataTables/datatables.min.js"></script>
+    <!-- Main File-->
+    <script src="js/checkRole.js"></script>
+    <script src="js/front.js"></script>
+    <script src="js/Plugin.js"></script>
+    <script type="text/javascript" src="js/js-cookie.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/tableusers.js"></script>
+    
+    </body>
+</html>

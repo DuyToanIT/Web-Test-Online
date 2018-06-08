@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Thi Trắc Ngiệm</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <!-- Fontastic Custom icon font-->
+    <link rel="stylesheet" href="css/fontastic.css">
+    <!-- Google fonts - Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="vendor/DataTables/datatables.min.css">
+     <!-- Custom stylesheet - for your changes-->
+     <link rel="stylesheet" href="css/user-custom.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerMenu" aria-controls="navbarTogglerMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerMenu">
+        <a class="navbar-brand" href="exam.html">
+            <div class="brand-text d-none d-md-inline-block ml-5">
+              <span>Trắc Nghiệm </span><strong class="text-success">Toán</strong>
+            </div>
+        </a>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0 offset-1">
+          <li class="nav-item active">
+            <a class="nav-link" href="exam.html">Trang chủ<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Giới thiệu</a>
+          </li>
+        </ul>
+        <ul class="nav-menu mr-5 list-unstyled d-flex flex-md-row align-items-md-center">     
+          <!-- Log out-->
+          <li class="nav-item dropdown"><a id="account" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link account dropdown-toggle"><img src="img/avata.png"></a>
+            <ul aria-labelledby="account" class="dropdown-menu">
+              <li><a id="redirectManage" rel="nofollow" href="tablequestions.html" class="dropdown-item" ><img src="img/ql.png" class="mr-2"><span>Quản lý</span></a></li>
+              <li><a id="acc" rel="nofollow" href="#" class="dropdown-item" > <img src="img/avata.png" class="mr-2"><span>Tài khoản</span></a></li>
+              <li><a id="logout" rel="nofollow" href="#" class="dropdown-item"> <img src="img/logout.png" class="mr-2"><span>Đăng xuất</span></a></li>
+            </ul>
+          </li>
+          
+        </ul>
+      </div>
+    </nav>
+  
+  <!--Modal TT Tai khoan-->
+  <div class="modal fade" id="infoAcc" tabindex="-1" role="dialog" aria-labelledby="accTitle" aria-hidden="true">
+      <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="accTitle">Thông tin tài khoản</h5>                              
+          </div>
+          <form>
+          <div class="modal-body">
+            <div class="container-fluid">
+              
+                <div class="form-group row ml-1">
+                  <div class="col-md-2 col-sm-12">
+                      <img src="img/avatar.png" width="100px" height="100px" class="ml-1">
+                  </div>                                
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-4 col-sm-12 text-right">Tài khoản:</label>
+                  <div class="col-md-8 col-sm-12">
+                    <input id="txtUseName" rows="5" style="resize: none; width: 100%" disabled>                                          
+                  </div>                                   
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-4 col-sm-12 text-right">Tên :</label>
+                  <div class="col-md-8 col-sm-12">
+                    <input id="txtFirstName" rows="5" style="resize: none; width: 100%" required>                                          
+                  </div>                                   
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-4 col-sm-12 text-right">Họ :</label>
+                  <div class="col-md-8 col-sm-12">
+                    <input id="txtLastName" rows="5" style="resize: none; width: 100%" required>                                          
+                  </div>                                   
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-4 col-sm-12 text-right">Email :</label>
+                  <div class="col-md-8 col-sm-12">
+                    <input id="txtEmail" type="email" required>                                          
+                  </div>                                   
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-4 col-sm-12 text-right">Ngày sinh :</label>
+                  <div class="col-md-8 col-sm-12">
+                    <input id="txtBirthday" type="date">                                          
+                  </div>                                   
+                </div>
+                
+              
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button id="btnUpdateAcc" type="submit" class="btn btn-primary">Cập nhật</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  <!--End modal tt tai khoan-->
+  <!-- Modal -->
+  <div class="modal fade" id="confirmModalExam" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Xác nhận</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Bạn có muốn làm bài kiểm tra
+        </div>
+        <div class="modal-footer">
+            <button type="button" id = "btnDoExam" class="btn btn-primary">Làm bài</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Không</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="container">
+        <p class="h3">Thi trắc ngiệm</p>
+        <div class="table-responsive">
+          <table id="tbSubject" class="table display">
+            <thead>
+            </thead>
+            <tbody>
+                
+            </tbody>
+          </table>
+        </div>
+    </div>
+    <footer class="main-footer bg-primary">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <p>Hệ thống thi &copy; 2017-2019</p>
+          </div>
+          <div class="col-sm-6 text-right">
+            <p>Design by <a href="#" class="external text-light">51403390-51403358-51403344</a></p>
+            <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions and it helps me to run Bootstrapious. Thank you for understanding :)-->
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper.js/umd/popper.min.js"> </script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
+    <script src="vendor/DataTables/datatables.min.js"></script>
+  
+    <!-- Main File-->
+    <script src="js/Plugin.js"></script>
+    <script src="js/js-cookie.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/exam.js"></script>
+    <script>
+      $(document).ready(function(){
+        var user = Cookies.getJSON("user");
+        var accVip = false;
+        
+        for(var i = 0; i < user.authorities.length; i++){
+            if(user.authorities[i].authority == "ROLE_SUPERVISOR")
+              accVip = true;
+        }
+        if(accVip == false)
+          $(redirectManage).hide();
+        
+      });  
+    </script>
+    </body>
+</html>

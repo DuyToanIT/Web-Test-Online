@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+
+		<title>Editor | Editing for DataTables</title>
+	</head>
+
+	<body class="editor wide hero index">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/javascript">
+	var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://localhost:8080/auth/login",
+  "method": "POST",
+  "headers": {
+    "content-type": "application/json",
+    "cache-control": "no-cache",
+    'Access-Control-Allow-Origin': '*'
+  },
+  "processData": false,
+  "withCredentials":true,
+  "data": "{\"username\":\"admin00\",\"password\":\"Windy610\"}"
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+</script>			
+			</body>
+</html>

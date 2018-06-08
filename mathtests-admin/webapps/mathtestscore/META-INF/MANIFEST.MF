@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Implementation-Title: mathtests-core
+Implementation-Version: 1.0-SNAPSHOT
+Archiver-Version: Plexus Archiver
+Built-By: thanhtu
+Implementation-Vendor-Id: tdt.it.mathtests
+Spring-Boot-Version: 1.5.3.RELEASE
+Implementation-Vendor: Pivotal Software, Inc.
+Main-Class: org.springframework.boot.loader.WarLauncher
+Start-Class: tdt.it.mathtests.App
+Spring-Boot-Classes: WEB-INF/classes/
+Spring-Boot-Lib: WEB-INF/lib/
+Created-By: Apache Maven 3.3.9
+Build-Jdk: 1.8.0_161
+Implementation-URL: http://maven.apache.org
+

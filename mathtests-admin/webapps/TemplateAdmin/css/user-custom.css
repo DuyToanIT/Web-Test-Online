@@ -1,0 +1,10 @@
+table td, th{
+    border: hidden !important;    
+    border-style: none !important;
+}
+table.dataTable thead .sorting, 
+table.dataTable thead .sorting_asc, 
+table.dataTable thead .sorting_desc {
+    background : none !important;
+}
+.dataTable > thead > tr > th[class*="sort"]::after{display: none}
