@@ -1,0 +1,245 @@
+form {
+    border: 3px solid #f1f1f1;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+#btnlogin {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+    opacity: 0.8;
+}
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+/* Avatar image */
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+/* Add padding to containers */
+.container {
+    padding: 16px;
+}
+
+/* The "Forgot password" text */
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+    .cancelbtn {
+        width: 100%;
+    }
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+			.on_test {
+			color: #333333;
+			font-size: 20px;
+			font-family: 'open_sanssemibold_italic';
+			margin-top: 0px;
+			font-style:italic;
+			}
+			.on_test span {
+			color: #cd3301;
+			}
+			.prgm_test {
+			margin-top: 0px;
+			}
+			a .test_box {
+			height: 70px;
+			border: 1px #fff solid;
+			border-bottom: 1px #000000 dashed;
+			text-decoration: none;
+			}
+			.c_prog {
+			color: #333333;
+			font-family: 'OpenSansRegular';
+			font-size: 18px;
+			margin-left: 16px;
+			margin-top: 8px;
+			}
+			.c_prog span {
+			font-size: 13px;
+			color: #e2213e;
+			}
+			.no_q {
+			font-family: 'OpenSansRegular';
+			color: #05acd6;
+			font-size: 13px;
+			margin-left: 16px;
+			margin-top: 5px;
+			}
+			#link a {
+			text-decoration: none;
+			}
+			.note11 {
+			background: #efefef;
+			height: 20px;
+			font-size: 16px;
+			padding: 5px 0px;
+			padding-left: 8px;
+			font-weight: bold;
+			}
+			.c_test {
+			color: #333333;
+			font-family: 'OpenSansRegular';
+			font-size: 18px;
+			margin-top: 20px;
+			}
+			.start {
+			background: #05acd6;
+			height: 37px;
+			color: #FFF !important;
+			text-align: center;
+			width: 158px;
+			-moz-margin-top: 6px;
+			margin-top: 20px;
+			font-size: 12px;
+			font-family: 'OpenSansRegular';
+			border: none;
+			font-weight: bold;
+			padding-top: 0px;
+			cursor: pointer;
+			}
+			.ins {
+			font-size: 13px;
+			margin-left:16px;
+			color: #46a86b;
+			}
+.questions {
+margin-top: 20px;
+font-family: 'OpenSansRegular';
+color: #333333;
+font-size: 14px;
+display: block;
+background: #eeeeee;
+border: #dcdcdc 1px solid;
+}
+#questions {
+font-family: 'OpenSansRegular';
+color: #333333;
+font-size: 14px;
+}
+.questionnumber {
+font-size: 18px;
+padding-left: 10px;
+padding-top: 5px;
+padding-bottom: 5px;
+background: #eeeeee;
+}
+.code_q {
+border: dashed 1px #93b7d5;
+width: 481px;
+margin-top: 18px;
+margin-bottom: 10px;
+margin-left: 15px;
+}
+.answer {
+width: 100%;
+border-top: #dcdcdc 1px solid;
+float: left;
+background: #FFF;
+}
+.a_ans {
+float: left;
+margin-left: 16px;
+width: 250px;
+margin-top: 7px;
+margin-bottom: 7px;
+font-size: 18px;
+word-wrap: break-word;
+}
+
